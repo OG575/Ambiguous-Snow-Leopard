@@ -1,0 +1,117 @@
+////////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////////
+//---------------------DESCRIPTION.EXT----------------------------------------//
+////////////////////////////////////////////////////////////////////////////////
+author			= "YonV";
+OnLoadName		= "OG575 Ambiguous Snow Leopard";
+OnLoadMission	= "Welcome to the ARMY's low intelligence housing project";
+
+taskManagement_propagate = 1;
+taskManagement_markers3D = 1;
+
+////////////////////////////////////////////////////////////////////////////////
+// INCLUDES 																  //
+////////////////////////////////////////////////////////////////////////////////
+
+cba_settings_hasSettingsFile = 1; // load cba settings from cba_settings.sqf
+enableDebugConsole = 1; //Allows access to the Debug Console outside of the editor during normal gameplay.0 = Default behavior, available only in editor, 1 = Available in SP and for hosts / logged in admins, 2 = Available for everyone
+
+////////////////////////////////////////////////////////////////////////////////
+// CfgFunctions																 //
+////////////////////////////////////////////////////////////////////////////////
+class CfgFunctions {
+};
+
+////////////////////////////////////////////////////////////////////////////////
+// Extended_PreInit_EventHandlers								    	      //
+////////////////////////////////////////////////////////////////////////////////
+class Extended_PreInit_EventHandlers {
+};
+
+
+class Extended_InitPost_EventHandlers {
+};
+
+class IMW_EmptyDisplay
+{
+   idd = 5000;
+   duration = 1e+009; //Time in seconds the resource will stay visible for. 1e+1000 = 1 * 10^1000 = never disappear
+   onLoad = "uiNamespace setVariable ['IMW_EmptyDisplay', _this select 0];";
+   movingenable = false;
+
+   class Controls
+   {
+   };
+};
+////////////////////////////////////////////////////////////////////////////////
+// its cold as fuck														  //
+////////////////////////////////////////////////////////////////////////////////
+class CfgWorlds
+{
+	class tem_ihantalaw
+	{
+		class Weather
+		{
+			temperatureDayMax[] = {-1,0,1,2,3,4,4,3,2,1,0,-1};
+			temperatureDayMin[] = {-10,-5,-3,-1,-1,-1,-1,-1,-2,-3,-5,-10};
+			temperatureNightMax[] = {-10,-5,-3,-1,-1,-1,-1,-1,-2,-3,-5,-10};
+			temperatureNightMin[] = {-15,-10,-5,0,5,10,10,5,0,-5,-10,-15};
+		};
+	};
+};
+
+////////////////////////////////////////////////////////////////////////////////
+// CfgRemoteExec															  //
+////////////////////////////////////////////////////////////////////////////////
+class CfgRemoteExec
+{
+	// List of script functions allowed to be sent from client via remoteExec
+	class Functions
+	{
+		mode = 2;
+		jip = 1;
+		class AUR_Hint { allowedTargets=1; };
+		class AUR_Hide_Object_Global { allowedTargets=2; };
+		class AUR_Enable_Rappelling_Animation_Global { allowedTargets=2; };
+		class AUR_Play_Rappelling_Sounds_Global { allowedTargets=2; };
+	};
+};
+
+
+////////////////////////////////////////////////////////////////////////////////
+// CfgSounds																  //
+////////////////////////////////////////////////////////////////////////////////
+class CfgSounds
+{
+	sounds[] = {};
+	class IMW_SB_E
+	{
+		name = "Immersed WeatherSingle Breath (External)";
+		sound[] = { "IMW-Snow\audio\singleBreath.ogg", 0.5, 1, 100 };
+		titles[] = { 0, "" };
+	};
+	class IMW_SB_I
+	{
+		name = "Immersed WeatherSingle Breath (Internal)";
+		sound[] = { "IMW-Snow\audio\singleBreath.ogg", 0.65, 1, 100 };
+		titles[] = { 0, "" };
+	};
+	class IMW_C
+	{
+		name = "Immersed Weather - Cough";
+		sound[] = { "IMW-Snow\audio\cough.ogg", 0.75, 1, 100 };
+		titles[] = { 0, "" };
+	};
+	class IMW_SW_L
+	{
+		name = "Immersed Weather - Snowy Wind (Low Volume)";
+		sound[] = { "IMW-Snow\audio\snowWind.ogg", 1.75, 1, 100 };
+		titles[] = { 0, "" };
+	};
+	class IMW_SW_H
+	{
+		name = "Immersed Weather - Snowy Wind (High Volume)";
+		sound[] = { "IMW-Snow\audio\snowWind.ogg", 2.75, 1, 100 };
+		titles[] = { 0, "" };
+	};
+};
