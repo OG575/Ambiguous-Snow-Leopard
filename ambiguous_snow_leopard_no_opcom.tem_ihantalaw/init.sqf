@@ -39,7 +39,6 @@ enableSentences false;
 
 [] execVM "IMW-Snow\init.sqf";
 
-
 ////////////////////////////////////////////////////////////////////////////////
 // Alive        														
 ////////////////////////////////////////////////////////////////////////////////
@@ -54,6 +53,14 @@ waituntil {(player getvariable ["alive_sys_player_playerloaded",false])};
 // ctab and blufor tracker  									
 ////////////////////////////////////////////////////////////////////////////////
 bluforUnit addItem "ItemcTab";
+bluforUnit assignItem "ItemcTab";
 independentUnit addItem "ItemcTab";
+independentUnit assignItem "ItemcTab";
 bluforUnit addItem "MRH_BluForTransponder";
 independentUnit addItem "MRH_BluForTransponder";
+opforUnit addItem "rhs_1PN138";
+opforUnit assignItem "rhs_1PN138";
+opforUnit addItem "ItemMicroDAGR";
+opforUnit assignItem "ItemMicroDAGR";
+
+ 

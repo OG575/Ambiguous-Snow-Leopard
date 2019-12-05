@@ -3,7 +3,7 @@
 //---------------------DESCRIPTION.EXT----------------------------------------//
 ////////////////////////////////////////////////////////////////////////////////
 author			= "YonV";
-OnLoadName		= "OG575 Ambiguous Snow Leopard no OPcom";
+OnLoadName		= "OG575 Ambiguous Snow Leopard No OpCom";
 OnLoadMission	= "Welcome to the ARMY's low intelligence housing project";
 
 taskManagement_propagate = 1;
